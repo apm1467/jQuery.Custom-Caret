@@ -54,13 +54,14 @@
                 sel.addRange(range);
             });
 
+            $(this).focusout(function() {
+                $(this).html($(this).text());
             });
 
             if ($.isFunction(settings.callback)) {
                 settings.callback.call(this);
             }
         });
-
     };
 
 }(jQuery));
