@@ -28,12 +28,12 @@ See `example/example.html` for a full example.
 		color: transparent;
 
 		/* Use text-shadow to make text visible */
-		text-shadow: 0 0 black;
+		text-shadow: 0 0 white;
 	}
 	
 	/* Custom the look of your caret */
 	#caret {
-		border-right: 0.5em solid var(--text);
+		border-right: 0.5em solid white;
 		margin-right: -0.5em;
 		animation: blink-animation 1s steps(2, start) infinite;
 	}
