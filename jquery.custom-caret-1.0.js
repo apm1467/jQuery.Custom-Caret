@@ -44,13 +44,15 @@
                     var content = $(this).text();
                     var output = content.substr(0, caretPosition) + caret + content.substr(caretPosition);
                     $(this).html(output);
+                var sel = window.getSelection();
 
-                    var sel = window.getSelection();
                     var range = document.createRange();
                     range.setStart($(this).get(0).childNodes[0], caretPosition);
                     range.collapse(true);
                     sel.removeAllRanges();
                     sel.addRange(range);
+                if (sel.toString() != "") {
+                    return;
                 }
             });
 
