@@ -6,7 +6,7 @@ A jQuery plugin to let you custom your caret (text cursor) using CSS.
 
 ## Tutorial
 
-See `example.html` for a full example.
+See `example/example.html` for a full example.
 
 1. Make a `contenteditable` element like a `<div>` or `<span>`:
 
