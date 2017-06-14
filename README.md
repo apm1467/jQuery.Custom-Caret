@@ -59,5 +59,4 @@ The default ID of that `<span>` is `#caret`. You can give it your own ID:
 
 ## Limit
 
-- Does not handle text selection well
 - Does not handle line break
