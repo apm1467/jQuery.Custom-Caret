@@ -1,0 +1,34 @@
+:root {
+    --blue: #268bd2;
+    --background: #002b36;
+    --text: #839496;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: monospace;
+    font-size: 18px;
+}
+
+#caret {
+    border-right: 0.5em solid var(--text);
+    margin-right: -0.5em;
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+#demo {
+    border: 3px solid var(--blue);
+    outline: none;
+    margin: 20px;
+    padding: 10px;
+
+    color: transparent;
+    text-shadow: 0 0 var(--text);
+}
