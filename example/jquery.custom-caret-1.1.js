@@ -35,30 +35,33 @@
 
         return this.each(function() {
             $(this).on("keydown keyup click focus", function() {
-                var caret = "<span id='" + settings.caretID + "'></span>";
-                
-                if ($(this).html() == "") {
-                    $(this).html(caret);
-                } else {
-                    var caretPosition = getCaretPosition($(this).get(0));
-                    var content = $(this).text();
-                    var output = content.substr(0, caretPosition) + caret + content.substr(caretPosition);
-                    $(this).html(output);
+                var caret = "&#xfeff;<span id='" + settings.caretID + "'></span>";
+                var sel = window.getSelection();
 
-                    var sel = window.getSelection();
-                    var range = document.createRange();
-                    range.setStart($(this).get(0).childNodes[0], caretPosition);
-                    range.collapse(true);
-                    sel.removeAllRanges();
-                    sel.addRange(range);
+                if (sel.toString() != "") {
+                    return;
                 }
+
+                var caretPosition = getCaretPosition($(this).get(0));
+                var content = $(this).text();
+                var output = content.substr(0, caretPosition) + caret + content.substr(caretPosition);
+                $(this).html(output);
+
+                var range = document.createRange();
+                range.setStart($(this).get(0).childNodes[0], caretPosition);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            });
+
+            $(this).focusout(function() {
+                $(this).html($(this).text());
             });
 
             if ($.isFunction(settings.callback)) {
                 settings.callback.call(this);
             }
         });
-
     };
 
 }(jQuery));
