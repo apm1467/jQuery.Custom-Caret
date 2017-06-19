@@ -1,6 +1,6 @@
 # jQuery Custom Caret
 
-A jQuery plugin to let you custom your caret (text cursor) using CSS.
+A jQuery plugin for customizing your caret (text cursor) using CSS.
 
 ![](demo.gif)
 
@@ -8,7 +8,7 @@ A jQuery plugin to let you custom your caret (text cursor) using CSS.
 
 See `example/example.html` for a full example.
 
-1. Make a `contenteditable` element like a `<div>` or `<span>`:
+1. Make a `contenteditable` element, e.g. a `<div>`:
 
 	```
 	<div id="demo" contenteditable="true"></div>
@@ -20,7 +20,7 @@ See `example/example.html` for a full example.
 	$("#demo").customCaret();
 	```
 	
-3. Ajust CSS:
+3. Add CSS:
 
 	```
 	#demo {
@@ -31,7 +31,7 @@ See `example/example.html` for a full example.
 		text-shadow: 0 0 white;
 	}
 	
-	/* Custom the look of your caret */
+	/* Customize the look of your caret */
 	#caret {
 		border-right: 0.5em solid white;
 		margin-right: -0.5em;
@@ -47,16 +47,17 @@ See `example/example.html` for a full example.
 ## Usage
 
 	$("yourContentEditableElement").customCaret({
-		caretID: _yourCaretID_,
-		callback: _yourCallbackFunction_
+		caretID: _caretID_,
+		callback: _callbackFunction_
 	});
 	
-A `<span id= _caretID_ ></span>` element will be insert into text as your custom caret. You can adjust the look of it using CSS.
+A `<span id= _caretID_ ></span>` element will be insert into the `contenteditable` element as your custom caret. You can adjust the look of it using CSS.
 
-The default ID of that `<span>` is `#caret`. You can give it your own ID:
+The default ID is `#caret`. You can also give your own ID:
 
 	$("#demo").customCaret({caretID: "myCaret"});
 
 ## Limit
 
 - Does not handle line break
+- Does not work on Microsoft Edge
