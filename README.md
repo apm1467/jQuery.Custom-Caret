@@ -2,7 +2,7 @@
 
 A jQuery plugin for customizing your caret (text cursor) using CSS.
 
-A demo page can be found [here](https://yige.ch/static/jquery.custom-caret/).
+A demo page is [here](https://static.yige.ch/jquery.custom-caret/).
 
 ![](demo.gif)
 
@@ -59,7 +59,9 @@ The default ID is `#caret`. You can also give your own ID:
 
 	$("#demo").customCaret({caretID: "myCaret"});
 
-## Limit
+## Limits
+
+This implementation:
 
 - Does not handle line break
 - Does not work in Microsoft Edge
